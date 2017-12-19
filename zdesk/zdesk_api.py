@@ -1801,6 +1801,14 @@ class ZendeskAPI(object):
         api_path = "/api/v2/help_center/users/{id}/comments.json"
         api_path = api_path.format(id=id)
         return self.call(api_path, **kwargs)
+    
+    
+    #User segments
+    def help_center_user_segments_create(self, data, **kwargs):
+        "https://developer.zendesk.com/rest_api/docs/help_center/user_segments#create-user-segment"
+        api_path = "/api/v2/help_center/user_segments.json"
+        return self.call(api_path, method="POST", data=data, **kwargs)
+
 
     def help_center_user_subscriptions(self, user_id, **kwargs):
         "https://developer.zendesk.com/rest_api/docs/help_center/subscriptions#list-subscriptions-by-user"
